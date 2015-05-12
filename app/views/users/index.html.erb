@@ -1,0 +1,7 @@
+<h1> Can I Borrow That? </h1>
+	<div class = "closet">
+		<% @users.each do |user| %>
+			<br><%= link_to user.closet.name, user %></br>
+			<% end %>
+
+		
