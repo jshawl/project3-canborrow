@@ -1,13 +1,14 @@
+
+
+
 .garment img{
     display: block;
     width: 100px;
     height: auto;
     padding: 10px;
+    float: center;
 }
 
-h1 {
-	position: center;
-}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

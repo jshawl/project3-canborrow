@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root "users#index"
   resources :users
-  resources :closets
-  resources :garments
-  resources :friendships
+  resources :closets do
+    resources :garments, shallow: true
+  end
+  resources :borrows
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

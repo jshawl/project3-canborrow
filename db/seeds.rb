@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Garments.destroy_all
-Closets.destroy_all
+Garment.destroy_all
+Closet.destroy_all
 User.destroy_all
 janice = User.create!(name: "Janice Min", gender: "female", top_size: "small", bottom_size: "medium", location: "Washington, DC")
 elliott = User.create!(name: "Elliott", gender: "male", top_size: "medium", bottom_size: "medium", location: "Baltimore, MD")

@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@closet = @user.closet
+		@garment = Garment.new
 	end
 
 	def new

@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511221912) do
+ActiveRecord::Schema.define(version: 20150512153320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "borrows", force: :cascade do |t|
+    t.integer "user_id1"
+    t.integer "user_id2"
+  end
 
   create_table "closets", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,15 +29,6 @@ ActiveRecord::Schema.define(version: 20150511221912) do
   end
 
   add_index "closets", ["user_id"], name: "index_closets_on_user_id", using: :btree
-
-  create_table "friendships", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "friendships", ["user_id"], name: "index_friendships_on_user_id", using: :btree
 
   create_table "garments", force: :cascade do |t|
     t.integer  "closet_id"
@@ -59,6 +55,5 @@ ActiveRecord::Schema.define(version: 20150511221912) do
   end
 
   add_foreign_key "closets", "users"
-  add_foreign_key "friendships", "users"
   add_foreign_key "garments", "closets"
 end

@@ -3,10 +3,50 @@
 <h2>Here are your choices </h2>
 <% @user.closet.garments.each do |garment| %>
 <div class= "garment">
+
 <% garment_url = garment.garment_url %>
 <% image_url = garment.background_url %>
 <%= link_to image_tag(image_url), garment_url %>
 </div>
 <% end %>
+
+<%= link_to 'Go Back to Different Closets!', users_path %>
+
+
+<h1>Tell Me About Your Garment and Add It To Your Closet</h1>
+
+<%= form_for [@closet, @garment] do |f| %>
+	<%= f.label :garment_url %>
+	<%= f.text_field :garment_url %>
+
+	<br>
+	<%= f.label :background_url %>
+	<%= f.text_field :background_url %>
+	</br>
+
+	<br>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	</br>
+
+	<br>
+	<%= f.label :garment_type %>
+	<%= f.text_field :garment_type %>
+	</br>
+
+	<br>
+	<%= f.label :size %>
+	<%= f.text_field :size %>
+	</br>
+
+	<br>
+	<%= f.label :gender %>
+	<%= f.text_field :gender%>
+	</br>
+	<%= f.submit %>
+
+	<% end %>
+
+
 
 
