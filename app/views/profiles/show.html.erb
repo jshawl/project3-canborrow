@@ -1,18 +1,22 @@
 
-<h1><%= @user.closet.name %></h1>
+<h1><%= @profile.closet.name %></h1>
 <h2>Here are your choices </h2>
-<% @user.closet.garments.each do |garment| %>
 <div class= "garment">
-
+<% @profile.closet.garments.each do |garment| %>
+<%= button_to "borrow", borrows_path(borrow: { garment_id: garment.id}) %>
 <% garment_url = garment.garment_url %>
 <% image_url = garment.background_url %>
-<%= link_to image_tag(image_url), garment_url %>
-</div>
+<%= image_tag(image_url) %>
 <% end %>
+</div>
 
-<%= link_to 'Go Back to Different Closets!', users_path %>
+<br>
+<div id = "back-to-closet">
+<%= link_to 'Go Back to Different Closets!', profiles_path %>
+</div>
+<br>
 
-
+<div class = "garment-add">
 <h1>Tell Me About Your Garment and Add It To Your Closet</h1>
 
 <%= form_for [@closet, @garment] do |f| %>
@@ -46,7 +50,13 @@
 	<%= f.submit %>
 
 	<% end %>
+</div>
 
+<div class = "borrows">
+	<h1>What Would You Like to Borrow From Me?</h1>
+
+
+</div>
 
 
 

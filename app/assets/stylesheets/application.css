@@ -1,13 +1,46 @@
+* {
+	background-color: #2F363E;
+}
 
+h1 {
+	font-family:'Monoton', cursive;
+	color: white;
+	text-align: center;
+}
 
+h2 {
+	font-family: 'Monoton', cursive;
+	color: white;
+}
+
+#front-page {
+	text-align: center;
+	color: white;
+}
+
+.garment {
+	display: inline block;
+}
 
 .garment img{
     display: block;
-    width: 100px;
+    width: 150px;
     height: auto;
     padding: 10px;
-    float: center;
+    float: left;
+    background: #FAFAFA;
+    margin-bottom: 40px;
 }
+
+.garment-add{
+	color: white;
+	float:right;
+}
+
+
+
+
+
 
 
 /*

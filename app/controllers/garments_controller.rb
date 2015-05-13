@@ -12,7 +12,7 @@ class GarmentsController < ApplicationController
 		@closet = Closet.find(params[:closet_id])
 		@garment = @closet.garments.new(garment_params)
 			if @garment.save
-			redirect_to user_path(@closet.user)
+			redirect_to profile_path(@closet.profile)
 			else
 			render :new
 		end
@@ -21,7 +21,7 @@ class GarmentsController < ApplicationController
 	def destroy
 		@garment = @garment.find(params[:id])
 		@garment.destroy
-		redirect_to user_path
+		redirect_to profile_path
 	end
 
 	private

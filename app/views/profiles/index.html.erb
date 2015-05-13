@@ -1,0 +1,9 @@
+
+<h1> Can I Borrow That? </h1>
+	<div id = "front-page"
+		<% @profiles.each do |profile| %>
+			<br><%= link_to profile.closet.name, profile %></br>
+			<% end %>
+	</div>
+
+		

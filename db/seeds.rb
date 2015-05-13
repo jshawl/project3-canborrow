@@ -7,15 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Garment.destroy_all
 Closet.destroy_all
-User.destroy_all
-janice = User.create!(name: "Janice Min", gender: "female", top_size: "small", bottom_size: "medium", location: "Washington, DC")
-elliott = User.create!(name: "Elliott", gender: "male", top_size: "medium", bottom_size: "medium", location: "Baltimore, MD")
+Profile.destroy_all
+janice = Profile.create!(name: "Janice Min", gender: "female", top_size: "small", bottom_size: "medium", location: "Washington, DC")
+elliott = Profile.create!(name: "Elliott", gender: "male", top_size: "medium", bottom_size: "medium", location: "Baltimore, MD")
 
 
 
 janice_closet = janice.build_closet(name: "Janice's Closet")
 janice_closet.save
-elliott_closet = elliott.build_closet(name: "Elliot's Closet")
+elliott_closet = elliott.build_closet(name: "Elliott's Closet")
 elliott_closet.save
 
 janice_closet.garments.create!([

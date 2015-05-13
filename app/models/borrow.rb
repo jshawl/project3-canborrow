@@ -1,4 +1,4 @@
 class Borrow < ActiveRecord::Base
-  has_many :garments
-  has_many :users
+  belongs_to :garment
+  belongs_to :profile
 end
