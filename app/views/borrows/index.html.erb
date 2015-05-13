@@ -1,0 +1,8 @@
+<h1> Stuff You've Borrowed <h1>
+<% @borrows.each do |borrow| %>
+<%= button_to "delete", borrow_path(borrow), :method => "delete" %>
+			<% garment_show = borrow.garment.background_url %>
+			<%= image_tag(garment_show) %>
+	<% end %>
+
+<%= link_to 'Go Back to Different Closets!', profiles_path %>

@@ -13,7 +13,8 @@ class BorrowsController < ApplicationController
 	end
 
 	def create
-		@borrow = current_user.borrows.new(borrow_params)
+		@profile = Profile.find(current_user.id)
+		@borrow = @profile.borrows.new(borrow_params)
 		if @borrow.save
 			redirect_to borrows_url
 		else
