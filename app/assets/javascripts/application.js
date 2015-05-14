@@ -11,6 +11,38 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui.min
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function() {
+		var params = {};
+
+    $( ".draggable" ).draggable({ 
+    	snap: true,
+    	drag: function() {
+        params = {
+        	id: $(this).data('garmentId'),
+					profileID: $(this).data('profileId'),
+					name: $(this).data('name')
+				};      
+			}
+   	});
+
+    $( ".column-style" ).droppable({
+      activeClass: "ui-state-default",
+      hoverClass: "ui-state-hover",
+      drop: function( event, ui ) { 
+      	params.method = "update";
+      	$.ajax({
+      		method: "post",
+      		url:"/closets/update",
+      		data: $.param(params)
+     		});
+        // console.log('hi');
+        // console.log($(this).data('index'));
+      }
+    });
+ });

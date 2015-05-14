@@ -26,12 +26,17 @@ class ClosetsController < ApplicationController
 	end
 
 	def update
+		# params[:profileID]
+		# params[:garmentID]
 		@closet = Closet.find(params[:id])			
 		if @closet.update(closet_params)
 			redirect_to profile_path(@closet.profile)
 		else
 			render :new
 		end
+			respond_to do |format|
+				format.json {render :nothing}
+			end
 	end
 
 	def destroy
@@ -42,7 +47,7 @@ class ClosetsController < ApplicationController
 
 	private
 	def closet_params
-		params.require(:closet).permit(:profile, :name)
+		params.require(:closet).permit(:name, :profileID, :garmentID)
 	end
 
 end

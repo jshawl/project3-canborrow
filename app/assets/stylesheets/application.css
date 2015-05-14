@@ -1,3 +1,14 @@
+.outline {
+	outline: 1px solid black;
+	min-height: 200px;
+}
+
+.column-style {
+	display: inline-block;
+	float: left;
+	width: 50%;
+}
+
 * {
 	background-color: #707070;
 }

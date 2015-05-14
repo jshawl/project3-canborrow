@@ -1,3 +1,4 @@
+<div class = "outline column-style" data-index="1">
 
 <h1><%= @profile.closet.name %></h1>
 <h2>Here are your choices </h2>
@@ -6,10 +7,16 @@
 <%= button_to "borrow", borrows_path(borrow: { garment_id: garment.id}) %>
 <% garment_url = garment.garment_url %>
 <% image_url = garment.background_url %>
-<%= image_tag(image_url) %>
+<%= image_tag(image_url, class: "draggable", "data-garment-id": garment.id, "data-profile-id": params[:id], "data-name": @profile.closet.name ) %>
 <% end %>
 </div>
 
+</div>
+
+<div class = "outline column-style" data-index="2">
+</div>
+
+<!--
 <br>
 <div id = "back-to-closet">
 <%= link_to 'Go Back to Different Closets!', profiles_path %>
@@ -57,6 +64,5 @@
 
 
 </div>
-
-
+-->
 
