@@ -38,7 +38,8 @@ $(function() {
       	params.method = "update";
       	$.ajax({
       		method: "post",
-      		url:"/closets/update",
+          profileID: $(this).data('profileId'),
+      		url:"/closets/update" + profileID,
       		data: $.param(params)
      		});
         // console.log('hi');

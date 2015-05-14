@@ -1,3 +1,7 @@
+#front-page {
+	font-family:'Monoton', cursive;
+}
+
 .outline {
 	outline: 1px solid black;
 	min-height: 200px;
@@ -10,7 +14,7 @@
 }
 
 * {
-	background-color: #707070;
+	background-color: #D1D1D1;
 }
 
 h1 {
@@ -27,6 +31,7 @@ h2 {
 #front-page {
 	text-align: center;
 	color: white;
+	margin-bottom: 10px;
 }
 
 .garment {
@@ -44,8 +49,11 @@ h2 {
 }
 
 .garment-add{
+	border: double;
+	border-color: white;
 	color: white;
-	float:right;
+	text-align: center;
+	padding-bottom: 50px;
 }
 
 
