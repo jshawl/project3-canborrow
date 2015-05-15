@@ -1,12 +1,39 @@
 
 <h1> Can I Borrow That? </h1>
 	<div id = "front-page"
-		<% @profiles.each do |profile| %>
+		<% Profile.all.each do |profile| %>
 			<br><%= link_to profile.closet.name, profile %></br>
 			<% end %>
 	</div>
 
-<div id = "form">
-	<%= render 'form' %>
-</div>
+<div class = "profile-add">
+<h1>Fill in Your Info</h1>
 
+<%= form_for current_user.profile do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<br>
+	<%= f.label :gender %>
+	<%= f.text_field :gender %>
+	</br>
+
+	<br>
+	<%= f.label :top_size %>
+	<%= f.text_field :top_size %>
+	</br>
+
+	<br>
+	<%= f.label :bottom_size %>
+	<%= f.text_field :bottom_size %>
+	</br>
+
+	<br>
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+	</br>
+
+	<%= f.submit %>
+
+	<% end %>
+</div>
