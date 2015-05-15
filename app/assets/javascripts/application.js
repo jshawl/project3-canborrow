@@ -34,12 +34,12 @@ $(function() {
     $( ".column-style" ).droppable({
       activeClass: "ui-state-default",
       hoverClass: "ui-state-hover",
-      drop: function( event, ui ) { 
-      	params.method = "update";
+      drop: function( event, ui ) {
+      	var profileID = $('#garment').data('profile-id');
+        params.method = "update";
       	$.ajax({
-      		method: "post",
-          profileID: $(this).data('profileId'),
-      		url:"/closets/update" + profileID,
+      		method: "get",
+      		url:"/closets/update/" + profileID,
       		data: $.param(params)
      		});
         // console.log('hi');

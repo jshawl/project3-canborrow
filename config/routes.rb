@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root "profiles#index"
   resources :profiles
+  resources :garments
   resources :closets do
     resources :garments, shallow: true
 end

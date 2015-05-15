@@ -1,8 +1,7 @@
 <div class = "garment-add">
 <h1>Tell Me About Your Garment and Add It To Your Closet</h1>
-
-<%= form_for @garment, url: {action: "create"} do |f| %>
-<%= f.label :garment_url %>
+<%= form_for @garment do |f| %>
+	<%= f.label :garment_url %>
 	<%= f.text_field :garment_url %>
 
 	<br>
