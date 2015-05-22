@@ -42,9 +42,10 @@ $(function() {
 
 				$.ajax({
 					method: "post",
-					url: '/closets/'+profileID+'/update/',
+					url: '/closets/'+profileID+'/update/', // consider using REST instead of custom routes.
 					data: $.param(params)
 				});
 			}
 		});
+		// Excellent job implementing this jQuery plugin!
  });
